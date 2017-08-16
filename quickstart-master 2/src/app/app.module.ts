@@ -20,7 +20,13 @@ import { DashboardComponent } from './dashboard.component';
 
  		path: 'dashboard',
  		component: DashboardComponent
- 	}
+ 	},
+
+ 	{
+  		path: '',
+  		redirectTo: '/dashboard',
+  		pathMatch: 'full'
+	},
   ])],
 
   declarations: [ AppComponent, DashboardComponent, HeroDetailComponent, HeroesComponent],
@@ -29,11 +35,4 @@ import { DashboardComponent } from './dashboard.component';
 })
 
 export class AppModule { }
-
-RouterModule.forRoot ([
-	{
-		path: 'heroes',
-		component: HeroesComponent
-	}
-])
 
