@@ -14,7 +14,7 @@ import { HeroService } from './hero.service';
   			(click)="onSelect(hero)">
   			<span class="badge">{{hero.id}}</span> {{hero.name}}
 		</li>
-	</ul>
+	</ul>  
   <hero-detail [hero]="selectedHero"></hero-detail>
   `
  , styles: [`
@@ -26,7 +26,7 @@ import { HeroService } from './hero.service';
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
-    width: 15em;
+    width: 15em;  
   }
   .heroes li {
     cursor: pointer;
@@ -65,8 +65,7 @@ import { HeroService } from './hero.service';
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`],
- providers: [HeroService]
+`]
 })
 
 export class HeroesComponent implements OnInit {
