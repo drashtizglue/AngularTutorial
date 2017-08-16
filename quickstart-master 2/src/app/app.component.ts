@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero';
+import { HEROES } from './mock-heroes';
 import { HeroService } from './hero.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -68,14 +70,17 @@ import { HeroService } from './hero.service';
  providers: [HeroService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private heroService: HeroService) { }
+
   title = 'Tour of Heroes';
   heroes = HEROES;
   selectedHero: Hero;
 
+	ngOnInit(): void {
+  	  this.getHeroes();
+	}
 
-
- 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
@@ -83,11 +88,5 @@ export class AppComponent {
   getHeroes(): void {
     this.heroes = this.heroService.getHeroes();
   }
-}
-
-export class AppComponent implements OnInit {
-	ngOnInit(): void {
-  	  this.getHeroes();
-	}
 }
 
