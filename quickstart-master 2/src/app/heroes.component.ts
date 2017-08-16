@@ -70,7 +70,7 @@ import { HeroService } from './hero.service';
 
 export class HeroesComponent implements OnInit {
   title = 'Tour of Heroes';
-  heroes: Hero[];
+  heroes: Hero[] = [];
   selectedHero: Hero;
 
   constructor(private heroService: HeroService) { }
@@ -87,4 +87,3 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 }
-
