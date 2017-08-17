@@ -8,7 +8,7 @@ import { Hero } from './hero';
 @Injectable()
 export class HeroService {
 	private heroesUrl = 'api/heroes';  // URL to web api
-
+	
 	constructor(private http: Http) { }
 
 	getHeroes(): Promise<Hero[]> {
@@ -25,7 +25,8 @@ export class HeroService {
 
   	getHero(id: number): Promise<Hero> {
   		return this.getHeroes()
-    	.then(heroes => heroes.find(hero => hero.id === id));
+    	.then(heroes => heroes.find(hero => hero.id === id))
+    	.catch(this.handleError);
   	}
 
 }
